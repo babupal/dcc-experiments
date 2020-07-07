@@ -28,7 +28,7 @@ def test_detail_reverse(cheese):
     url = reverse('cheeses:detail',
     kwargs={'slug': cheese.slug})
     assert url == f'/cheeses/{cheese.slug}/'
-    def test_detail_resolve(cheese):
+def test_detail_resolve(cheese):
     """/cheeses/cheeseslug/ should resolve to cheeses:detail."""
     url = f'/cheeses/{cheese.slug}/'
     assert resolve(url).view_name == 'cheeses:detail'
